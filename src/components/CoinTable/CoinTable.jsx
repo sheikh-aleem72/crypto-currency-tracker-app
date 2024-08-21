@@ -35,7 +35,7 @@ function CoinTable() {
                 <div
                   onClick={() => handleCoinDetails(coin.id)}
                   key={coin.id}
-                  className="w-full bg-transparent text-white flex py-4 px-2 font-semibold items-center justify-between cursor-pointer"
+                  className="w-full bg-transparent text-white flex py-4 px-1 font-semibold items-center justify-between cursor-pointer"
                 >
                   <div className="flex items-center justify-start gap-3 basis-[35%]">
                     <div className="w-[7vw] h-[7vw]">
@@ -43,16 +43,16 @@ function CoinTable() {
                     </div>
                     <div className="flex flex-col">
                       <div className="text-[3vw]">{coin.name}</div>
-                      <div className="text-[1vw]">{coin.symbol}</div>
+                      <div className="text-[2vw]">{coin.symbol}</div>
                     </div>
                   </div>
-                  <div className="basis-[25%] text-[1.2vw]">
+                  <div className="basis-[25%] text-[2vw]">
                     {coin.current_price}
                   </div>
-                  <div className="basis-[20%] text-[1.2vw]">
+                  <div className="basis-[20%] text-[2vw]">
                     {coin.price_change_24h}
                   </div>
-                  <div className="basis-[20%] text-[1.2vw]">
+                  <div className="basis-[20%] text-[2vw]">
                     {coin.market_cap}
                   </div>
                 </div>
