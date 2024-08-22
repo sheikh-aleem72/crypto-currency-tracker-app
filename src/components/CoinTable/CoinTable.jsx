@@ -18,14 +18,14 @@ function CoinTable() {
 
   return (
     <>
-      <div className="flex flex-col w-[85vw] my-5 gap-5 mx-auto justify-center items-center">
+      <div className="flex flex-col w-[95vw] my-5 gap-5 mx-auto justify-center items-center">
         <div className="flex justify-center items-center bg-yellow-300 font-semibold py-4 px-2 text-black w-full">
           <div className="basis-[35%]">Coin</div>
           <div className="basis-[20%]">Price</div>
           <div className="basis-[25%]">24h Change</div>
           <div className="basis-[20%]">Market Cap</div>
         </div>
-        <div className="flex flex-col w-[85vw] mx-auto">
+        <div className="flex flex-col w-[95vw] mx-auto">
           {isLoading && <div>Loading....</div>}
           {coins && (
             <Virtuoso
