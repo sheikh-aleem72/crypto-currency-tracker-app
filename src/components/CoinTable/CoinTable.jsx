@@ -18,14 +18,14 @@ function CoinTable() {
 
   return (
     <>
-      <div className="flex flex-col w-[95vw] my-5 gap-5 mx-auto justify-center items-center">
+      <div className="flex flex-col w-[93vw] my-5 gap-5 mx-auto justify-center items-center">
         <div className="flex justify-center items-center bg-yellow-300 font-semibold py-4 px-2 text-black w-full">
           <div className="basis-[35%]">Coin</div>
-          <div className="basis-[20%]">Price</div>
-          <div className="basis-[25%]">24h Change</div>
+          <div className="basis-[15%]">Price</div>
+          <div className="basis-[30%]">24h Change</div>
           <div className="basis-[20%]">Market Cap</div>
         </div>
-        <div className="flex flex-col w-[95vw] mx-auto">
+        <div className="flex flex-col w-[93vw] mx-auto">
           {isLoading && <div>Loading....</div>}
           {coins && (
             <Virtuoso
@@ -48,10 +48,10 @@ function CoinTable() {
                       </div>
                     </div>
                   </div>
-                  <div className="basis-[20%] md:text-[1.2vw] text-[2vw]">
+                  <div className="basis-[15%] md:text-[1.2vw] text-[2vw]">
                     {coin.current_price}
                   </div>
-                  <div className="basis-[25%] md:text-[1.2vw] text-[2vw]">
+                  <div className="basis-[30%] md:text-[1.2vw] text-[2vw]">
                     {coin.price_change_24h}
                   </div>
                   <div className="basis-[20%] md:text-[1.2vw] text-[2vw]">
