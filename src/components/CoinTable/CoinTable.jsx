@@ -42,17 +42,19 @@ function CoinTable() {
                       <img src={coin.image} className="h-full w-full" />
                     </div>
                     <div className="flex flex-col">
-                      <div className="text-[3vw]">{coin.name}</div>
-                      <div className="text-[1vw]">{coin.symbol}</div>
+                      <div className="text-[2.5vw]">{coin.name}</div>
+                      <div className="md:text-[1vw] text-[1.5vw]">
+                        {coin.symbol}
+                      </div>
                     </div>
                   </div>
-                  <div className="basis-[25%] text-[1.2vw]">
+                  <div className="basis-[20%] md:text-[1.2vw] text-[2vw]">
                     {coin.current_price}
                   </div>
-                  <div className="basis-[20%] text-[1.2vw]">
+                  <div className="basis-[25%] md:text-[1.2vw] text-[2vw]">
                     {coin.price_change_24h}
                   </div>
-                  <div className="basis-[20%] text-[1.2vw]">
+                  <div className="basis-[20%] md:text-[1.2vw] text-[2vw]">
                     {coin.market_cap}
                   </div>
                 </div>

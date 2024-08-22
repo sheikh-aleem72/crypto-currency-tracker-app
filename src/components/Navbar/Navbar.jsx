@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   // const { setCurrency } = useContext(currencyContext);
-  const { setCurrency } = store();
+  const { currency, setCurrency } = store();
   const navigate = useNavigate();
   function goToHome() {
     navigate("/");
