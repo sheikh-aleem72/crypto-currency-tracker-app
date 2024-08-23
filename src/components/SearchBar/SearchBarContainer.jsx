@@ -6,8 +6,14 @@ import store from "../../state/state";
 export default function SearchBarContainer() {
   const { coinData: coins, fetchCoinData, currency } = store();
   useEffect(() => {
-    fetchCoinData(currency); // You can change 'usd' to any other currency
-  }, [coins, fetchCoinData, currency]);
+    if (!coins) {
+      fetchCoinData(currency);
+    }
+  }, [coins, fetchCoinData]);
+
+  useEffect(() => {
+    fetchCoinData(currency);
+  }, [currency]);
   return (
     <>
       <SearchBar coins={coins} />

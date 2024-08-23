@@ -6,8 +6,16 @@ import store from "../../state/state";
 export default function CoinTableContainer() {
   const { coinData: coins, fetchCoinData, currency } = store();
   useEffect(() => {
+    if (!coins) {
+      fetchCoinData(currency);
+    }
+  }, [coins, fetchCoinData]);
+
+  useEffect(() => {
     fetchCoinData(currency);
-  }, [coins, fetchCoinData, currency]);
+  }, [currency]);
+  //   if (!coins) return <div>Loading...</div>;
+  //   const { currency, coins, isError, isLoading, error } = useFetchCoinData();
 
   return (
     <CoinTable
