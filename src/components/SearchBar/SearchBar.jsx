@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import CoinInfoContainer from "../CoinInfo/CoinInfoContainer";
 import { useNavigate } from "react-router-dom";
 
 export const SearchBar = ({ coins }) => {
@@ -12,7 +11,13 @@ export const SearchBar = ({ coins }) => {
   }
   function handleFormSubmit(event) {
     event.preventDefault();
-    console.log(value);
+    if (value === "") {
+      alert("Please name of the crypto");
+      return;
+    }
+    const query = value;
+    setValue("");
+    navigate(`/search/${query}`);
   }
 
   function goToCoinDetails(coinId) {
@@ -55,7 +60,7 @@ export const SearchBar = ({ coins }) => {
         </label>
       </form>
       {value && (
-        <div className="absolute z-10 max-h-[30vw] rounded-md overflow-auto w-[100vw] md:w-[30vw] bg-[#141111] top-10 md:top-14 right-1 shadow-sm shadow-gray-500 ">
+        <div className="absolute z-50 max-h-[30vw] rounded-md overflow-auto w-[100vw] md:w-[30vw] bg-[#141111] top-10 md:top-14 right-1 shadow-sm shadow-gray-500 ">
           {coins.map((coin, index) => {
             if (value && coin && coin.name.toLowerCase().includes(value)) {
               return (

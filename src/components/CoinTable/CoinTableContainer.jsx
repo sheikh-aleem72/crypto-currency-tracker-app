@@ -1,16 +1,21 @@
 import React, { useEffect } from "react";
-import { SearchBar } from "./SearchBar";
+import CoinTable from "./CoinTable";
 import useFetchCoinData from "../../hooks/useFetchCoinData";
 import store from "../../state/state";
 
-export default function SearchBarContainer() {
+export default function CoinTableContainer() {
   const { coinData: coins, fetchCoinData, currency } = store();
   useEffect(() => {
-    fetchCoinData(currency); // You can change 'usd' to any other currency
+    fetchCoinData(currency);
   }, [coins, fetchCoinData, currency]);
+
   return (
-    <>
-      <SearchBar coins={coins} />
-    </>
+    <CoinTable
+      //   currency={currency}
+      coins={coins}
+      //   isError={isError}
+      //   isLoading={isLoading}
+      //   error={error}
+    />
   );
 }

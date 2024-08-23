@@ -3,6 +3,7 @@ import MainLayout from "../../pages/Layout/MainLayout";
 import { lazy, Suspense } from "react";
 import PageLoader from "../PageLoader/PageLoader.jsx";
 import CustomErrorBoundary from "../CustomErrorBoundary/CustomErrorBoundary.jsx";
+import SearchResult from "../../pages/SearchResult/SearchResult.jsx";
 
 const Home = lazy(() => import("../../pages/Home/Home"));
 const CoinDetails = lazy(() => import("../../pages/Details/Details.jsx"));
@@ -26,6 +27,14 @@ function Routing() {
               element={
                 <Suspense fallback={<PageLoader />}>
                   <CoinDetails />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/search/:query"
+              element={
+                <Suspense fallback={<PageLoader />}>
+                  <SearchResult />
                 </Suspense>
               }
             />

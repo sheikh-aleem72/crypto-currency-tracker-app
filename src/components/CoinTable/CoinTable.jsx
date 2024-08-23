@@ -2,19 +2,18 @@ import { useNavigate } from "react-router-dom";
 import { Virtuoso } from "react-virtuoso";
 import useFetchCoinData from "../../hooks/useFetchCoinData";
 
-function CoinTable() {
+function CoinTable({ currency, coins, isError, isLoading, error }) {
   const navigate = useNavigate();
 
   // const { currency } = useContext(currencyContext);
-  const { currency, coins, isError, isLoading, error } = useFetchCoinData();
 
   function handleCoinDetails(id) {
     navigate(`/details/${id}`);
   }
 
-  if (isError) {
-    return <div>Error: {error.message}</div>;
-  }
+  // if (isError) {
+  //   return <div>Error: {error.message}</div>;
+  // }
 
   return (
     <>
@@ -26,7 +25,8 @@ function CoinTable() {
           <div className="basis-[20%]">Market Cap</div>
         </div>
         <div className="flex flex-col w-[93vw] mx-auto">
-          {isLoading && <div>Loading....</div>}
+          {/* {isLoading && <div>Loading....</div>} */}
+          {!coins && <div>Loading....</div>}
           {coins && (
             <Virtuoso
               style={{ height: 1000 }}
