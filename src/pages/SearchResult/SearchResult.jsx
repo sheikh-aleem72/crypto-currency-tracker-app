@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import store from "../../state/state";
 import CoinTable from "../../components/CoinTable/CoinTable";
+import { useParams } from "react-router-dom";
 
 export default function SearchResult() {
   const { query: value } = useParams();
