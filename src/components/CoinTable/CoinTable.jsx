@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { Virtuoso } from "react-virtuoso";
-import useFetchCoinData from "../../hooks/useFetchCoinData";
 
 function CoinTable({ currency, coins, isError, isLoading, error }) {
   const navigate = useNavigate();
