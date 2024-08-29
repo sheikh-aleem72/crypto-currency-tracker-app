@@ -3,7 +3,6 @@ import { currencyContext } from "../../contexts/currencyContext";
 import store from "../../state/state";
 import { useNavigate } from "react-router-dom";
 import { SearchBar } from "../SearchBar/SearchBar";
-import SearchBarContainer from "../SearchBar/SearchBarContainer";
 
 function Navbar() {
   // const { setCurrency } = useContext(currencyContext);
@@ -15,7 +14,7 @@ function Navbar() {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row md:justify-between">
+      <div className="flex flex-col md:flex-row md:justify-between ">
         <div className="navbar flex md:flex-row  md:w-[50%]">
           <div className="">
             <div className="dropdown">
@@ -71,7 +70,7 @@ function Navbar() {
           </div>
         </div>
         <div className="navbar-end relative self-center w-full md:w-[30%]">
-          <SearchBarContainer />
+          <SearchBar />
         </div>
       </div>
     </>

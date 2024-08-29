@@ -16,16 +16,21 @@ function CoinTable({ currency, coins, isError, isLoading, error }) {
 
   return (
     <>
-      <div className="flex flex-col w-[93vw] my-5 gap-5 mx-auto justify-center items-center">
-        <div className="flex justify-center items-center bg-yellow-300 font-semibold py-4 px-2 text-black w-full">
-          <div className="basis-[35%]">Coin</div>
-          <div className="basis-[15%]">Price</div>
-          <div className="basis-[30%]">24h Change</div>
-          <div className="basis-[20%]">Market Cap</div>
+      <div className="flex flex-col w-[93vw] mt-5 pb-2 mx-auto justify-center items-center rounded-xl shadow-2xl shadow-[#1f1f22] bg-[#0b1f41]">
+        <div className="flex justify-center items-center bg-[#010f27] font-semibold py-4 px-2 text-white w-full rounded-t-lg">
+          <div className="basis-[40%] text-[4vw] md:text-[2vw] pl-4">Coin</div>
+          <div className="basis-[20%] text-[4vw] md:text-[2vw] text-start">
+            Price
+          </div>
+          <div className="basis-[20%] text-[4vw] md:text-[2vw] text-start">
+            24h Change
+          </div>
+          <div className="basis-[20%] text-[4vw] md:text-[2vw] text-start">
+            Market Cap
+          </div>
         </div>
-        <div className="flex flex-col w-[93vw] mx-auto">
-          {/* {isLoading && <div>Loading....</div>} */}
-          {!coins && <div>Loading....</div>}
+        <div className="flex flex-col w-[93vw] mx-auto rounded-b-lg px-1 pb-2">
+          {isLoading && <div>Loading....</div>}
           {coins && (
             <Virtuoso
               style={{ height: 1000 }}
@@ -34,10 +39,10 @@ function CoinTable({ currency, coins, isError, isLoading, error }) {
                 <div
                   onClick={() => handleCoinDetails(coin.id)}
                   key={coin.id}
-                  className="w-full bg-transparent text-white flex py-4 px-1 font-semibold items-center justify-between cursor-pointer"
+                  className="w-full bg-transparent text-white flex py-4 px-2 font-semibold items-center justify-between cursor-pointer border-t-0 border border-[#5a5252be] hover:bg-gray-950 rounded"
                 >
-                  <div className="flex items-center justify-start gap-3 basis-[35%]">
-                    <div className="w-[7vw] h-[7vw]">
+                  <div className="flex items-center justify-start gap-3 basis-[40%]">
+                    <div className="w-[5vw] h-[5vw]">
                       <img src={coin.image} className="h-full w-full" />
                     </div>
                     <div className="flex flex-col">
@@ -47,13 +52,13 @@ function CoinTable({ currency, coins, isError, isLoading, error }) {
                       </div>
                     </div>
                   </div>
-                  <div className="basis-[15%] md:text-[1.2vw] text-[2vw]">
-                    {coin.current_price}
+                  <div className="basis-[20%] md:text-[1.2vw] text-[2.3vw] text-start">
+                    {Number(coin.current_price).toFixed(4)}
                   </div>
-                  <div className="basis-[30%] md:text-[1.2vw] text-[2vw]">
-                    {coin.price_change_24h}
+                  <div className="basis-[20%] md:text-[1.2vw] text-[2.3vw] text-start">
+                    {Number(coin.price_change_24h).toFixed(4)}
                   </div>
-                  <div className="basis-[20%] md:text-[1.2vw] text-[2vw]">
+                  <div className="basis-[20%] md:text-[1.2vw] text-[2.3vw] text-start">
                     {coin.market_cap}
                   </div>
                 </div>
