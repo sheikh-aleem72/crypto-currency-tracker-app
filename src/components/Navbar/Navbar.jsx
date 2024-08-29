@@ -65,7 +65,7 @@ function Navbar() {
           </div>
           <div className="md:navbar-center">
             <a className="btn btn-ghost text-xl" onClick={() => goToHome()}>
-              Coin Gecko
+              Crypto Tracker
             </a>
           </div>
         </div>
